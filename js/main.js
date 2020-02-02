@@ -3,7 +3,6 @@ var templatePicture = document.querySelector('#picture')
   .content.
 querySelector('.picture');
 
-
 // document.querySelector('.big-picture').classList.remove('hidden');
 document.querySelector('.social__comment-count').classList.add('visually-hidden');
 document.querySelector('.comments-loader').classList.add('visually-hidden');
@@ -28,8 +27,6 @@ var imgUploadCancel = document.querySelector('.img-upload__cancel');
 
 // пин слайдера редактора
 var effectLevelPin = document.querySelector('.effect-level__pin');
-
-
 var effectLevelValue = document.querySelector('.effect-level__value').getAttribute('value');
 
 
@@ -253,6 +250,7 @@ textDescription.addEventListener('keydown', function (evt) {
     evt.stopPropagation();
   }
 });
+
 
 var imgUpLoadEffects = document.querySelector('.img-upload__effects');
 
