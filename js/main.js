@@ -2,8 +2,6 @@
 var templatePicture = document.querySelector('#picture')
   .content.
 querySelector('.picture');
-
-
 // document.querySelector('.big-picture').classList.remove('hidden');
 document.querySelector('.social__comment-count').classList.add('visually-hidden');
 document.querySelector('.comments-loader').classList.add('visually-hidden');
@@ -60,7 +58,6 @@ var names = [
   'Gogi',
   'Мифодий'
 ];
-
 var filter = [
   {
     name: 'grayscale',
@@ -100,7 +97,6 @@ var filter = [
 var countProportion = function (obj, value) {
   return obj.name + '(' + (((obj.maxValue - obj.minValue) / 100) * value) + obj.measure + ')';
 };
-
 // --------- рандомное елемент массива -----------
 
 
@@ -161,7 +157,6 @@ for (var i = 0; i < descriptionPhotos.length; i++) {
   fragment.appendChild(pictureBlokGeneration(descriptionPhotos[i]));
 }
 document.querySelector('.pictures').appendChild(fragment);
-
 // открытие редактора при изминении контрола загрузки
 
 uploadFile.addEventListener('change', function () {
@@ -330,4 +325,3 @@ document.addEventListener('keydown', function (evt) {
     bigPicture.classList.remove('hidden');
   }
 });
-
