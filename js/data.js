@@ -8,6 +8,7 @@
 
   window.data = {
     descriptionPhotos: descriptionPhotos,
+
   };
 
 })();
