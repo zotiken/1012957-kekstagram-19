@@ -306,7 +306,6 @@ main {
 
 .img-upload__wrapper {
   margin: 0 auto;
-  padding-bottom: 60px;
   width: 582px;
 
   text-align: center;
@@ -405,6 +404,7 @@ main {
   height: 100%;
 
   padding-top: 60px;
+  padding-bottom: 60px;
   overflow: auto;
 
   background-color: rgba(0, 0, 0, 0.8);
@@ -714,8 +714,8 @@ main {
 }
 
 .effects__preview--phobos {
-  -webkit-filter: blur(3px);
-          filter: blur(3px);
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
 }
 
 .effects__preview--heat {
@@ -1347,6 +1347,10 @@ main {
   background: transparent;
   border: 2px solid #ffffff;
   border-radius: 5px;
+}
+
+.error__button:first-child {
+  margin-right: 30px;
 }
 
 .error__button:hover,
