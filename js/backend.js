@@ -51,7 +51,7 @@
           onError('ошибка сервера');
           break;
       }
-      console.log(xhr);
+
 
       xhr.addEventListener('timeout', function () {
         onError('Привышенно время ожидания');
