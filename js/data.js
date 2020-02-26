@@ -5,7 +5,7 @@
   window.bigPictureImg = bigPictureImg;
 
   var descriptionPhotos = [];
-  window.descriptionPhotos = descriptionPhotos;
+
   var descriptions = [
     'шедевр',
     'модерн',
@@ -74,7 +74,8 @@
       });
     }
   };
-  generateDescriptionPhoto(25);
+
+  generateDescriptionPhoto(0);
 
 
   function bigPictureBlockGeneration(params) {
