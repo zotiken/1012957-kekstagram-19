@@ -137,7 +137,6 @@
   var effectsItem = document.querySelectorAll('.effects__radio');
   var effectLevelDepth = document.querySelector('.effect-level__depth');
   var effectLevelLine = document.querySelector('.effect-level__line');
-
   // Функция пропорции значения range для фильтра
   var countProportion = function (obj, value) {
     return obj.name + '(' + (((obj.maxValue - obj.minValue) / 100) * value) + obj.measure + ')';
@@ -187,7 +186,6 @@
 
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
-
   });
 
   var applyFilter = function (params) {
@@ -198,7 +196,6 @@
   imgUpLoadEffects.addEventListener('input', function (evt) {
     effectLevelPin.style.left = '100%';
     effectLevelDepth.style.width = effectLevelPin.style.left;
-
     switch (evt.target.id) {
       case 'effect-none':
         document.querySelector('.img-upload__effect-level').classList.add('hidden');

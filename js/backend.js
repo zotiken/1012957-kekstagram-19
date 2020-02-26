@@ -52,7 +52,6 @@
           break;
       }
 
-
       xhr.addEventListener('timeout', function () {
         onError('Привышенно время ожидания');
         console.error('Привышенно время ожидания');
