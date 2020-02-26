@@ -34,8 +34,6 @@
   };
 
   document.querySelector('.pictures').addEventListener('click', onopenBigImage);
-
-
   bigPictureImgCancel.addEventListener('click', function () {
     bigPicture.classList.add('hidden');
   });
