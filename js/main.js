@@ -4,3 +4,4 @@
   document.querySelector('.comments-loader').classList.add('visually-hidden');
 
 })();
+
