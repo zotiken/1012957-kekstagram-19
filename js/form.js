@@ -125,7 +125,6 @@
     }
   });
 
-
   var imgUpLoadEffects = document.querySelector('.img-upload__effects');
 
   // пин слайдера редактора
