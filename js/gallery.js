@@ -29,4 +29,5 @@
 
   window.backend.load('https://js.dump.academy/kekstagram/data', onGetDescriptionPhotos, window.main.errorBlockGeneration);
 
+
 })();

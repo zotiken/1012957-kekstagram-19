@@ -3,7 +3,9 @@
 
   var bigPictureImg = document.querySelector('.big-picture__img');
   window.bigPictureImg = bigPictureImg;
+
   var descriptionPhotos = [];
+
   var descriptions = [
     'шедевр',
     'модерн',
@@ -72,6 +74,7 @@
       });
     }
   };
+
   generateDescriptionPhoto(0);
 
 
