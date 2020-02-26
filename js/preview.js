@@ -3,8 +3,6 @@
   var bigPicture = document.querySelector('.big-picture');
 
   var bigPictureImgCancel = document.querySelector('.big-picture__cancel');
-
-
   var clearListComment = function (params) {
     if (params.length > 1) {
       for (var i = 2; i < params.length; i++) {
@@ -58,7 +56,6 @@
     }
   });
 
-
   var onopenBigImage = function (evt) {
     if (evt.target.classList[0] === 'picture' || evt.target.classList[0] === 'picture__img') {
       if (evt.target.classList[0] === 'picture__img') {
@@ -70,8 +67,6 @@
   };
 
   document.querySelector('.pictures').addEventListener('click', onopenBigImage);
-
-
   bigPictureImgCancel.addEventListener('click', function () {
     bigPicture.classList.add('hidden');
   });
