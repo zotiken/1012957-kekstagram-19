@@ -55,14 +55,9 @@
         document.querySelector('.social__comments-loader').classList.add('visually-hidden');
       }
     });
-
-<<<<<<< HEAD
   });
 
   var onOpenBigImage = function (evt) {
-=======
-  var onopenBigImage = function (evt) {
->>>>>>> 163c39be04f256ce186a9e2c17872ed12529eab9
     if (evt.target.classList[0] === 'picture' || evt.target.classList[0] === 'picture__img') {
       document.querySelector('body').classList.add('modal-open');
       var target = (evt.target.classList[0] === 'picture__img') ? evt.path[1] : evt.target;
@@ -70,12 +65,8 @@
     }
   };
 
-<<<<<<< HEAD
   document.querySelector('.pictures').addEventListener('click', onOpenBigImage);
 
-=======
-  document.querySelector('.pictures').addEventListener('click', onopenBigImage);
->>>>>>> 163c39be04f256ce186a9e2c17872ed12529eab9
   bigPictureImgCancel.addEventListener('click', function () {
     document.querySelector('body').classList.remove('modal-open');
     bigPicture.classList.add('hidden');
