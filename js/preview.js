@@ -32,6 +32,9 @@
         bigPicture.querySelector('img').src = item.url;
         document.querySelector('.comments-count').textContent = item.comments.length;
         var index = (item.comments.length < 5) ? item.comments.length : 5;
+        if (index >= 5) {
+          document.querySelector('.social__comment-count').classList.remove('visually-hidden');
+        }
         var socialCommentList = bigPicture.querySelectorAll('.social__comment');
         generateComment(index, i, socialCommentList);
         bigPicture.querySelector('.social__caption').textContent = item.description;
