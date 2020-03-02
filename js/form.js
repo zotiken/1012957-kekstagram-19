@@ -204,7 +204,7 @@
   var effectLevelValue = document.querySelector('.effect-level__value').getAttribute('value');
   var effectLevel = document.querySelector('.img-upload__effect-level');
   var effectLevelPin = document.querySelector('.effect-level__pin');
-
+  
   var effectsItem = document.querySelectorAll('.effects__radio');
   var effectLevelDepth = document.querySelector('.effect-level__depth');
   var effectLevelLine = document.querySelector('.effect-level__line');

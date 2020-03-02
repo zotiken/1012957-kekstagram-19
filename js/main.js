@@ -47,5 +47,4 @@
     generateErrorBlock: generateErrorBlock,
     generateSuccessPopUpBlock: generateSuccessPopUpBlock,
   };
-
 })();
