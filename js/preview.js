@@ -35,21 +35,35 @@
     socialComments.append(fragment);
   };
   var openBigImageTab = function (elem) {
+    document.querySelector('.social__comment-count').classList.add('visually-hidden');
     var targetPicture = elem.querySelector('.picture__img').getAttribute('src');
     socialCommentLoader.classList.add('hidden');
 
     window.pictures.forEach(function (item, i) {
       if (targetPicture === item.url) {
+        var socialCommentCount = document.querySelector('.social__comment-count');
         var socialCommentList = bigPicture.querySelectorAll('.social__comment');
+        var numberComments = '5 из <span class="comments-count" wfd-id="99">7</span> комментариев';
         clearListComment(socialCommentList);
         bigPicture.classList.remove('hidden');
         likesCount.textContent = item.likes;
         bigPictureImg.src = item.url;
         commentCount.textContent = item.comments.length;
         var index = (item.comments.length < COMMENTS_VISIBLE) ? item.comments.length : COMMENTS_VISIBLE;
-        if (index >= COMMENTS_VISIBLE) {
-          document.querySelector('.social__comment-count').classList.remove('visually-hidden');
+        socialCommentCount.classList.remove('visually-hidden');
+        if (index === 1) {
+          numberComments = '<span class="comments-count" wfd-id="99">';
+          numberComments += index;
+          numberComments += '</span> комментарий</div>';
+        } else if (index > 1 && index < 5) {
+          numberComments = '<span class="comments-count" wfd-id="99">';
+          numberComments += index;
+          numberComments += '</span> комментария</div>';
+        } else {
+          numberComments = '5 из <span class="comments-count" wfd-id="99">7</span> комментариев';
         }
+        socialCommentCount.innerHTML = numberComments;
+
         generateComment(index, i, window.form.ELEMENT_ONE_ARRAY);
         socialCaption.textContent = item.description;
         if (item.comments.length >= COMMENTS_VISIBLE) {
