@@ -28,7 +28,7 @@
     return data;
   };
   var clearGallery = function () {
-    if (picturesBlock.children.length > 1) {
+    if (picturesBlock.children.length > window.filter.ARRAY_CORRECT) {
       var pictureElem = document.querySelectorAll('.picture');
       pictureElem.forEach(function (item, i) {
         picturesBlock.removeChild(pictureElem[i]);
@@ -63,14 +63,7 @@
 
   var onErrorClose = function () {
     window.main.generateErrorBlock();
-    document.addEventListener('click', function (evt) {
-      if (evt.target.classList[window.form.ELEMENT_ONE_ARRAY] === 'error__button') {
-        window.onCloseErrorPopUp(evt.path[3]);
-      }
-      if (evt.target.classList[window.form.ELEMENT_ONE_ARRAY] === 'error') {
-        window.onCloseErrorPopUp(evt.target);
-      }
-    });
+    document.addEventListener('click', window.form.onClickErrorWindow);
     document.addEventListener('keydown', onCloseErrorEsc);
   };
 

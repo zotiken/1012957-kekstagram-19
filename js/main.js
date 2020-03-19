@@ -17,30 +17,30 @@
   var generateSuccessPopUpBlock = function () {
     var successPopUpBlock = successPopUp.cloneNode(true);
     document.body.appendChild(successPopUpBlock);
-    var onRemoveSuccessPopUpBlock = function (i) {
-      if (i.keyCode === ESC_KEY_CODE) {
+    var onRemoveSuccessPopUpBlock = function (evt) {
+      if (evt.keyCode === ESC_KEY_CODE) {
         successPopUpBlock.remove();
-        document.removeEventListener('keydown', function (evt) {
-          onRemoveSuccessPopUpBlock(evt);
-        });
+        document.removeEventListener('keydown', onRemoveSuccessPopUpBlock);
       }
     };
-    document.addEventListener('keydown', function (evt) {
-      onRemoveSuccessPopUpBlock(evt);
-    });
+    document.addEventListener('keydown', onRemoveSuccessPopUpBlock);
   };
+
 
   var onCloseSuccessPopUp = function (element) {
     element.remove();
+    document.removeEventListener('click', onClickSuccessPopUp);
   };
-  document.addEventListener('click', function (evt) {
-    if (evt.target.classList[window.form.ELEMENT_ONE_ARRAY] === 'success__button') {
+
+  var onClickSuccessPopUp = function (evt) {
+    if (evt.target.classList[window.form.ELEMENT_ONE_ARRAY] === 'error__button') {
       onCloseSuccessPopUp(evt.path[ELEMENT_THREE_ARRAY]);
     }
-    if (evt.target.classList[window.form.ELEMENT_ONE_ARRAY] === 'success') {
-      onCloseSuccessPopUp(evt.target.classList[window.form.ELEMENT_ONE_ARRAY]);
+    if (evt.target.classList[window.form.ELEMENT_ONE_ARRAY] === 'error') {
+      onCloseSuccessPopUp(evt.target);
     }
-  });
+  };
+  document.addEventListener('click', onClickSuccessPopUp);
   window.main = {
     ESC_KEY_CODE: ESC_KEY_CODE,
     ELEMENT_THREE_ARRAY: ELEMENT_THREE_ARRAY,

@@ -3,10 +3,10 @@
 (function () {
 
   var COUNT_RANDOM_PICTURES = 10;
-
+  var ARRAY_CORRECT = 1;
   var filtersForm = document.querySelector('.img-filters__form');
   var makeRandomValue = function (array) {
-    return array[Math.round(Math.random() * (array.length - 1))];
+    return array[Math.round(Math.random() * (array.length - ARRAY_CORRECT))];
   };
 
   var getPicturesRandom = function (num) {
@@ -15,7 +15,7 @@
       picturesRandom.push(makeRandomValue(window.pictures));
     }
     for (var q = window.form.ELEMENT_ONE_ARRAY; q < picturesRandom.length; q++) {
-      for (var r = q + 1; r < picturesRandom.length; r++) {
+      for (var r = q + ARRAY_CORRECT; r < picturesRandom.length; r++) {
         if (picturesRandom[q] === picturesRandom[r]) {
           picturesRandom[r] = makeRandomValue(window.pictures);
         }
@@ -31,33 +31,34 @@
     });
     parameter.target.classList.add('img-filters__button--active');
   };
+  var activateFilter = function (i) {
+    window.gallery.updateGallery(window.pictures);
+    clearActiveButtons(i);
+  };
 
-  var onFilterSelect = function (parameter) {
-    switch (parameter.target.id) {
+  var onFilterSelect = function (evt) {
+    switch (evt.target.id) {
       case 'filter-popular':
+        activateFilter(evt);
         window.gallery.sortByLikes(window.pictures);
-        window.gallery.updateGallery(window.pictures);
-        clearActiveButtons(parameter);
         break;
       case 'filter-random':
         window.gallery.updateGallery(getPicturesRandom(COUNT_RANDOM_PICTURES));
-        clearActiveButtons(parameter);
+        clearActiveButtons(evt);
         break;
       case 'filter-discussed':
+        activateFilter(evt);
         window.gallery.sortByComments(window.pictures);
-        window.gallery.updateGallery(window.pictures);
-        clearActiveButtons(parameter);
         break;
       default:
+        activateFilter(evt);
         window.gallery.sortByLikes(window.pictures);
-        window.gallery.updateGallery(window.pictures);
-        clearActiveButtons(parameter);
         break;
     }
   };
+  filtersForm.addEventListener('click', window.debounce(onFilterSelect));
 
-  filtersForm.addEventListener('click', window.debounce(function (evt) {
-    onFilterSelect(evt);
-  }));
-
+  window.filter = {
+    ARRAY_CORRECT: ARRAY_CORRECT
+  };
 })();

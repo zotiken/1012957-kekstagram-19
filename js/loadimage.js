@@ -5,8 +5,7 @@
 
   var imageUpload = document.querySelector('.img-upload__input');
   window.previewImage = document.querySelector('.img-upload__preview').querySelector('img');
-
-  imageUpload.addEventListener('change', function () {
+  var onImageUpload = function () {
     window.effectLevel.classList.add('hidden');
     var file = imageUpload.files[window.form.ELEMENT_ONE_ARRAY];
     var filename = file.name.toLowerCase();
@@ -20,5 +19,12 @@
       });
       reader.readAsDataURL(file);
     }
-  });
+  };
+  imageUpload.addEventListener('change', onImageUpload);
+
+  window.loadImage = {
+    imageUpload: imageUpload,
+    onImageUpload: onImageUpload,
+  };
+
 })();
